@@ -1,0 +1,19 @@
+#employeeContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#editEmployeeForm {
+    margin-top: 10px;
+    padding: 20px;
+    width: 65%;
+
+    form {
+        border-radius: 8px 8px 0 0;
+        border: 0.2rem solid #ececec;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px; 
+    }
+}
