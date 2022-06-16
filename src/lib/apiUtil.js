@@ -44,6 +44,7 @@ export const ApiUtil = {
     },
 
     addEmployee(employeeType, firstName, lastName, email, phoneNumber) {
+        console.log(employeeType);
         const newEmployee = {
             EMPLOYEE_TYPE_ID: employeeType,
             first_name: firstName,

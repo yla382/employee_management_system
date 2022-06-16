@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom"
 const AddEmployeeForm = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [employeeType, setEmployeeType] = useState(1);
+    const [employeeType, setEmployeeType] = useState('1');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
 

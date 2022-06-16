@@ -1,5 +1,6 @@
 module.exports = {
     validateInput: function (fields) {
+        console.log(typeof fields.EMPLOYEE_TYPE_ID);
         if(fields.EMPLOYEE_TYPE_ID !== '2' && fields.EMPLOYEE_TYPE_ID !== '1') {
             return {validation: false, msg: "Please choose valid employment type"};
         }
