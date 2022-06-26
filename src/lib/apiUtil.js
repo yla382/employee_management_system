@@ -1,8 +1,9 @@
 import axios from 'axios';
+import env from "react-dotenv";
 
 export const ApiUtil = {
     getSickDayByEmployee(id) {
-        return axios.get(`http://localhost:3001/sickdays/${id}`).then((response) => response.data);
+        return axios.get(`${env.API_URL}/sickdays/${id}`).then((response) => response.data);
     },
 
     addNewSickDays(employeeId, sickDayFrom, sickDayTo) {
@@ -13,7 +14,7 @@ export const ApiUtil = {
         };
 
         return axios
-            .post('http://localhost:3001/sickdays/add', sickDays)
+            .post(`${env.API_URL}/sickdays/add`, sickDays)
             .then((response) => {
                 return response;
             })
@@ -32,15 +33,15 @@ export const ApiUtil = {
             sick_to: filters.sickDaysToFilter
         }
 
-        return axios.get('http://localhost:3001/employees', {params: params}).then((response) => response.data);
+        return axios.get(`${env.API_URL}/employees`, {params: params}).then((response) => response.data);
     },
 
     findEmployee(id) {
-        return axios.get(`http://localhost:3001/employees/${id}`).then((response) => response.data);
+        return axios.get(`${env.API_URL}/employees/${id}`).then((response) => response.data);
     },
 
     deleteEmployee(id) {
-        return axios.get(`http://localhost:3001/employees/${id}/delete`).then((response) => response);
+        return axios.get(`${env.API_URL}/employees/${id}/delete`).then((response) => response);
     },
 
     addEmployee(employeeType, firstName, lastName, email, phoneNumber) {
@@ -54,7 +55,7 @@ export const ApiUtil = {
             active: 'Y'
         };
         return axios
-            .post('http://localhost:3001/employees/add', newEmployee)
+            .post(`${env.API_URL}/employees/add`, newEmployee)
             .then((response) => {
                 return response;
             })
@@ -75,7 +76,7 @@ export const ApiUtil = {
         };
 
         return axios
-            .post('http://localhost:3001/employees/update', updateEmployee)
+            .post(`${env.API_URL}/employees/update`, updateEmployee)
             .then((response) => {
                 return response;
             })
